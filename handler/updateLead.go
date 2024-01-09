@@ -8,6 +8,20 @@ import (
 	"github.com/joaogabsoaresf/go-stock-watcher/schemas"
 )
 
+// @BasePath /api/v1
+
+// @Summary Update lead
+// @Description Update a leads in database
+// @Tags Leads
+// @Accept json
+// @Produce json
+// @Param request body UpdateLeadRequest true "Request body"
+// @Param id query string true "Lead id"
+// @Success 200 {object} UpdateLeadResponse
+// @Failures 400 {object} ErrorResponse
+// @Failures 404 {object} ErrorResponse
+// @Failures 500 {object} ErrorResponse
+// @Router /leads [put]
 func UpdateLeadHandler(ctx *gin.Context) {
 	request := UpdateLeadRequest{}
 	ctx.BindJSON(&request)

@@ -33,6 +33,26 @@ definitions:
       message:
         type: string
     type: object
+  handler.UpdateLeadRequest:
+    properties:
+      age:
+        type: integer
+      client:
+        type: boolean
+      email:
+        type: string
+      name:
+        type: string
+      phone:
+        type: string
+    type: object
+  handler.UpdateLeadResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.LeadRespose'
+      message:
+        type: string
+    type: object
   schemas.LeadRespose:
     properties:
       client:
@@ -132,6 +152,32 @@ paths:
           schema:
             $ref: '#/definitions/handler.ShowLeadResponse'
       summary: Show leads
+      tags:
+      - Leads
+    put:
+      consumes:
+      - application/json
+      description: Update a leads in database
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.UpdateLeadRequest'
+      - description: Lead id
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.UpdateLeadResponse'
+      summary: Update lead
       tags:
       - Leads
 swagger: "2.0"

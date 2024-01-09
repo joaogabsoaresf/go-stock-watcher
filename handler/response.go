@@ -43,3 +43,8 @@ type ShowLeadResponse struct {
 	Message string              `json:"message"`
 	Data    schemas.LeadRespose `json:"data"`
 }
+
+type UpdateLeadResponse struct {
+	Message string              `json:"message"`
+	Data    schemas.LeadRespose `json:"data"`
+}
