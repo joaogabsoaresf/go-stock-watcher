@@ -43,5 +43,13 @@ A documentação da API é gerada automaticamente usando o Swagger. Para acessar
 
 A documentação Swagger fornecerá detalhes sobre os endpoints disponíveis, parâmetros necessários e exemplos de solicitações.
 
+# Atualizações em Andamento
+Ainda não tive tempo de subir todas as atualizações, devo fazer em breve as seguintes adições:
+
+- Criar fluxo para criação de imagem com o Docker;
+- Deploy no App Engine do GCP;
+- Adição de testes;
+- Refatorar a base da dados para o MongoDB;
+
 ## Contribuindo
-Se você quiser contribuir para este projeto, sinta-se à vontade para abrir uma issue ou enviar uma solicitação pull. Esperamos que este projeto evolua com a ajuda da comunidade!
+Se você quiser contribuir para este projeto, sinta-se à vontade para abrir uma issue ou enviar uma solicitação pull. Espero que este projeto evolua com a ajuda da comunidade!
