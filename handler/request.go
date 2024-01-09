@@ -34,3 +34,24 @@ func (r *CreateLeadRequest) Validate() error {
 	}
 	return nil
 }
+
+// update request
+type UpdateLeadRequest struct {
+	Name   string `json:"name"`
+	Email  string `json:"email"`
+	Phone  string `json:"phone"`
+	Client *bool  `json:"client"`
+	Age    int64  `json:"age"`
+}
+
+func (r *UpdateLeadRequest) Validate() error {
+	if r.Name != "" ||
+		r.Email != "" ||
+		r.Phone != "" ||
+		r.Client != nil ||
+		r.Age > 0 {
+		return nil
+	}
+
+	return fmt.Errorf("at least one field must be provied")
+}
