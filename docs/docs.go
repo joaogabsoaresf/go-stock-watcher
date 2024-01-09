@@ -46,6 +46,45 @@ const docTemplate = `{
                     }
                 }
             },
+            "put": {
+                "description": "Update a leads in database",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Leads"
+                ],
+                "summary": "Update lead",
+                "parameters": [
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handler.UpdateLeadRequest"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Lead id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.UpdateLeadResponse"
+                        }
+                    }
+                }
+            },
             "post": {
                 "description": "Create a new lead in database",
                 "consumes": [
@@ -127,45 +166,6 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/handler.ShowLeadResponse"
-                        }
-                    }
-                }
-            },
-            "put": {
-                "description": "Update a leads in database",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Leads"
-                ],
-                "summary": "Update lead",
-                "parameters": [
-                    {
-                        "description": "Request body",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/handler.UpdateLeadRequest"
-                        }
-                    },
-                    {
-                        "type": "string",
-                        "description": "Lead id",
-                        "name": "id",
-                        "in": "query",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/handler.UpdateLeadResponse"
                         }
                     }
                 }

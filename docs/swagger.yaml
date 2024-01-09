@@ -139,21 +139,6 @@ paths:
       summary: Create lead
       tags:
       - Leads
-  /leads:
-    get:
-      consumes:
-      - application/json
-      description: Show all leads in database
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/handler.ShowLeadResponse'
-      summary: Show leads
-      tags:
-      - Leads
     put:
       consumes:
       - application/json
@@ -178,6 +163,21 @@ paths:
           schema:
             $ref: '#/definitions/handler.UpdateLeadResponse'
       summary: Update lead
+      tags:
+      - Leads
+  /leads:
+    get:
+      consumes:
+      - application/json
+      description: Show all leads in database
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ShowLeadResponse'
+      summary: Show leads
       tags:
       - Leads
 swagger: "2.0"

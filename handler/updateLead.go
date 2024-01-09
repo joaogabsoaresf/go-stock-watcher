@@ -21,7 +21,7 @@ import (
 // @Failures 400 {object} ErrorResponse
 // @Failures 404 {object} ErrorResponse
 // @Failures 500 {object} ErrorResponse
-// @Router /leads [put]
+// @Router /lead [put]
 func UpdateLeadHandler(ctx *gin.Context) {
 	request := UpdateLeadRequest{}
 	ctx.BindJSON(&request)
