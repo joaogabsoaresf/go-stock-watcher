@@ -108,6 +108,29 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "/leads": {
+            "get": {
+                "description": "Show all leads in database",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Leads"
+                ],
+                "summary": "Show leads",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ShowLeadResponse"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
