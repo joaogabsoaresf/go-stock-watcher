@@ -16,6 +16,36 @@ const docTemplate = `{
     "basePath": "{{.BasePath}}",
     "paths": {
         "/lead": {
+            "get": {
+                "description": "Show a specifc lead in database",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Leads"
+                ],
+                "summary": "Show lead",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Lead id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ShowLeadResponse"
+                        }
+                    }
+                }
+            },
             "post": {
                 "description": "Create a new lead in database",
                 "consumes": [
@@ -113,6 +143,17 @@ const docTemplate = `{
             }
         },
         "handler.DeleteLeadResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/schemas.LeadRespose"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "handler.ShowLeadResponse": {
             "type": "object",
             "properties": {
                 "data": {

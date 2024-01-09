@@ -8,6 +8,18 @@ import (
 	"github.com/joaogabsoaresf/go-stock-watcher/schemas"
 )
 
+// @BasePath /api/v1
+
+// @Summary Show lead
+// @Description Show a specifc lead in database
+// @Tags Leads
+// @Accept json
+// @Produce json
+// @Param id query string true "Lead id"
+// @Success 200 {object} ShowLeadResponse
+// @Failures 400 {object} ErrorResponse
+// @Failures 404 {object} ErrorResponse
+// @Router /lead [get]
 func ShowLeadHandler(ctx *gin.Context) {
 	id := ctx.Query("id")
 	if id == "" {

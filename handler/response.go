@@ -38,3 +38,8 @@ type DeleteLeadResponse struct {
 	Message string              `json:"message"`
 	Data    schemas.LeadRespose `json:"data"`
 }
+
+type ShowLeadResponse struct {
+	Message string              `json:"message"`
+	Data    schemas.LeadRespose `json:"data"`
+}
