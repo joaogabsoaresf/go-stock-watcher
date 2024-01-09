@@ -19,6 +19,13 @@ definitions:
       message:
         type: string
     type: object
+  handler.DeleteLeadResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.LeadRespose'
+      message:
+        type: string
+    type: object
   schemas.LeadRespose:
     properties:
       client:
@@ -49,19 +56,18 @@ paths:
       - application/json
       description: Delete a lead in database
       parameters:
-      - description: Request body
-        in: body
-        name: request
+      - description: Lead id
+        in: query
+        name: id
         required: true
-        schema:
-          $ref: '#/definitions/handler.CreateLeadRequest'
+        type: string
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/handler.CreateLeadResponse'
+            $ref: '#/definitions/handler.DeleteLeadResponse'
       summary: Delete lead
       tags:
       - Leads

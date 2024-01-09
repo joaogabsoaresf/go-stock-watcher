@@ -15,7 +15,7 @@ import (
 // @Tags Leads
 // @Accept json
 // @Produce json
-// @Param request body CreateLeadRequest true "Request body"
+// @Param id query string true "Lead id"
 // @Success 200 {object} DeleteLeadResponse
 // @Failures 400 {object} ErrorResponse
 // @Failures 404 {object} ErrorResponse

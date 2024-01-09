@@ -62,20 +62,18 @@ const docTemplate = `{
                 "summary": "Delete lead",
                 "parameters": [
                     {
-                        "description": "Request body",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/handler.CreateLeadRequest"
-                        }
+                        "type": "string",
+                        "description": "Lead id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.CreateLeadResponse"
+                            "$ref": "#/definitions/handler.DeleteLeadResponse"
                         }
                     }
                 }
@@ -104,6 +102,17 @@ const docTemplate = `{
             }
         },
         "handler.CreateLeadResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/schemas.LeadRespose"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "handler.DeleteLeadResponse": {
             "type": "object",
             "properties": {
                 "data": {

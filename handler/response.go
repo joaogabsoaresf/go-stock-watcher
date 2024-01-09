@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joaogabsoaresf/go-stock-watcher/schemas"
 )
 
 func sendError(ctx *gin.Context, code int, msg string) {
@@ -21,4 +22,19 @@ func sendSuccess(ctx *gin.Context, op string, data interface{}) {
 		"message": fmt.Sprintf("lead %s success", op),
 		"data":    data,
 	})
+}
+
+type ErrorResponse struct {
+	Message    string `json:"message"`
+	ErrorCorde string `json:"errorCord"`
+}
+
+type CreateLeadResponse struct {
+	Message string              `json:"message"`
+	Data    schemas.LeadRespose `json:"data"`
+}
+
+type DeleteLeadResponse struct {
+	Message string              `json:"message"`
+	Data    schemas.LeadRespose `json:"data"`
 }
