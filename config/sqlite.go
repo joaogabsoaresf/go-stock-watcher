@@ -3,7 +3,7 @@ package config
 import (
 	"os"
 
-	"github.com/joaogabsoaresf/go-stock-watcher/schemas"
+	"github.com/joaogabsoaresf/mygocrm/schemas"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )

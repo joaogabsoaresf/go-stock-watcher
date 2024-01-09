@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/joaogabsoaresf/go-stock-watcher/schemas"
+	"github.com/joaogabsoaresf/mygocrm/schemas"
 )
 
 // @BasePath /api/v1

@@ -1,4 +1,4 @@
-module github.com/joaogabsoaresf/go-stock-watcher
+module github.com/joaogabsoaresf/mygocrm
 
 go 1.21.5
 

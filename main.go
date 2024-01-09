@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/joaogabsoaresf/go-stock-watcher/config"
-	"github.com/joaogabsoaresf/go-stock-watcher/router"
+	"github.com/joaogabsoaresf/mygocrm/config"
+	"github.com/joaogabsoaresf/mygocrm/router"
 )
 
 var (

@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/joaogabsoaresf/go-stock-watcher/config"
+	"github.com/joaogabsoaresf/mygocrm/config"
 	"gorm.io/gorm"
 )
 

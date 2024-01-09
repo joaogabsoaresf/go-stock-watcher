@@ -2,8 +2,8 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	docs "github.com/joaogabsoaresf/go-stock-watcher/docs"
-	"github.com/joaogabsoaresf/go-stock-watcher/handler"
+	docs "github.com/joaogabsoaresf/mygocrm/docs"
+	"github.com/joaogabsoaresf/mygocrm/handler"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
