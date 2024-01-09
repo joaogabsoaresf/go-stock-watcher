@@ -8,6 +8,19 @@ import (
 	"github.com/joaogabsoaresf/go-stock-watcher/schemas"
 )
 
+// @BasePath /api/v1
+
+// @Summary Delete lead
+// @Description Delete a lead in database
+// @Tags Leads
+// @Accept json
+// @Produce json
+// @Param request body CreateLeadRequest true "Request body"
+// @Success 200 {object} DeleteLeadResponse
+// @Failures 400 {object} ErrorResponse
+// @Failures 404 {object} ErrorResponse
+// @Failures 500 {object} ErrorResponse
+// @Router /lead [delete]
 func DeleteLeadHandler(ctx *gin.Context) {
 	id := ctx.Query("id")
 	if id == "" {

@@ -1,4 +1,89 @@
+definitions:
+  handler.CreateLeadRequest:
+    properties:
+      age:
+        type: integer
+      client:
+        type: boolean
+      email:
+        type: string
+      name:
+        type: string
+      phone:
+        type: string
+    type: object
+  handler.CreateLeadResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.LeadRespose'
+      message:
+        type: string
+    type: object
+  schemas.LeadRespose:
+    properties:
+      client:
+        type: boolean
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
+      email:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      phone:
+        type: string
+      salary:
+        type: integer
+      updatedAt:
+        type: string
+    type: object
 info:
   contact: {}
-paths: {}
+paths:
+  /lead:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a lead in database
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.CreateLeadRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.CreateLeadResponse'
+      summary: Delete lead
+      tags:
+      - Leads
+    post:
+      consumes:
+      - application/json
+      description: Create a new lead in database
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.CreateLeadRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.CreateLeadResponse'
+      summary: Create lead
+      tags:
+      - Leads
 swagger: "2.0"

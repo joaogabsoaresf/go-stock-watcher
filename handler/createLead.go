@@ -7,6 +7,18 @@ import (
 	"github.com/joaogabsoaresf/go-stock-watcher/schemas"
 )
 
+// @BasePath /api/v1
+
+// @Summary Create lead
+// @Description Create a new lead in database
+// @Tags Leads
+// @Accept json
+// @Produce json
+// @Param request body CreateLeadRequest true "Request body"
+// @Success 200 {object} CreateLeadResponse
+// @Failures 400 {object} ErrorResponse
+// @Failures 500 {object} ErrorResponse
+// @Router /lead [post]
 func CreateLeadHandler(ctx *gin.Context) {
 	request := CreateLeadRequest{}
 

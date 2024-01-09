@@ -3,7 +3,7 @@
 APP_NAME=mygocrm
 
 # Tasks
-default: run
+default: run-with-docs
 
 run:
 	@go run main.go
@@ -11,6 +11,9 @@ build:
 	@go build -o $(APP_NAME) main.go
 test:
 	@go test ./ ...
+run-with-docs:
+	@swag init
+	@go run main.go
 docs:
 	@swag init
 clean:
